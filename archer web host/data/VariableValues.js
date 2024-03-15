@@ -1,0 +1,16 @@
+graphic.setValue('led0', false);
+graphic.setValue('led1', false);
+graphic.setValue('led2', false);
+graphic.setValue('led3', false);
+graphic.setValue('led4', false);
+graphic.setValue('led5', false);
+graphic.setValue('led6', false);
+graphic.setValue('led7', false);
+graphic.setValue('sw0', false);
+graphic.setValue('sw1', false);
+graphic.setValue('sw2', false);
+graphic.setValue('sw3', false);
+graphic.setValue('sw4', false);
+graphic.setValue('sw5', false);
+graphic.setValue('sw6', false);
+graphic.setValue('sw7', false);

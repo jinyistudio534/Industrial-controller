@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tank-1</title>
+	<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf8">
+    <style>	
+
+        body {
+            margin: 0;
+        }
+
+        #container {
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        #error {
+            display: none;
+        }
+
+    </style>	
+	
+	<script type = "text/javascript">
+		
+	</script>
+</head>
+<body>
+
+<div id="container"></div>
+
+<div id="error">
+    <h1>The graphic files could not be loaded</h1>
+    <p>Please note that this example may only work when served through a web server. The example code needs to dynamically load files which for security reasons is not allowed when serving from the file system.</p>
+</div>
+
+<!-- Include the runtime library -->
+<!-- NOTE: The Archer Runtime library is free for personal, non-commercial use and testing environments. -->
+<!-- For using the Archer Runtime library in production environments please visit https://archer.graphics to learn more about commercial licensing options. -->
+<script src='/libs/archer.min.js'></script>
+<script src='/libs/jquery-3.5.1.js'></script>
+<script src='/libs/b4j_ws.js'></script>
+
+
+
+<script language='javascript' type='text/javascript'>
+
+    /*
+    * NOTE: This example may only work when it is loaded through a web server. The example code needs to load the archer
+    * graphic file as well as the archer configuration file, which for security reasons is not allowed when loading the
+    * HTML file from the file system.
+    */
+
+    /**
+     * Root location where your interactive graphic is stored.
+     * Leave empty to resolve paths relative from this HTML.
+     * Can also contain an absolute URL to the server where your graphic is stored, for example:
+     * http://my-domain.com/graphics/my-graphic/
+     */
+    var rootUrl = '';
+
+    /**
+     * Location of the assets folder, by default resolved relative from root URL
+     */
+    var assetUrl = rootUrl + 'assets';
+
+    /**
+     * Location of the SVG file, by default resolved relative from root URL
+     */
+    var graphicUrl = rootUrl + 'archer.graphic.svg';
+
+    /**
+     * Location of the graphic configuration file, by default resolved relative from root URL
+     */
+    var configUrl = rootUrl + 'archer.config.json';
+
+    /**
+     * The container HTML element in which to display the graphic
+     */
+    var container = document.getElementById('container');
+
+    // Create a graphic instance over the container
+    var graphic = archer.create(container);
+
+    // Tell the graphic where assets (e.g. images) are located
+    graphic.document.setAssetRoot(assetUrl);
+
+    // Load graphic and configuration
+    graphic.loadUrl(graphicUrl, configUrl);
+
+    // Wait until files are loaded
+    graphic.on('ready', function () {
+
+        // Make graphic fit into container bounds
+        graphic.view.zoomToFit();
+
+        // Enable zoom / pan with mouse
+        graphic.view.enableMouse(false, false);
+
+        // Set variable values
+		for (let i = 0; i < 8; i++) {			
+			graphic.setValue('led' + i,false);
+		}       
+       
+        // Add event listeners
+        graphic.element('image701').on('click', function(element, event) {
+			b1 = graphic.getValue('sw0');
+			graphic.setValue('sw0',!b1);
+			b4j_raiseEvent("updateVal",{sw0:!b1});
+            console.log('event: ' + event.type + ', element: ' + element.id);									
+        });
+		graphic.element('image496').on('click', function(element, event) {
+            console.log('event: ' + event.type + ', element: ' + element.id);	
+			b1 = graphic.getValue('sw1');
+			graphic.setValue('sw1',!b1);	
+			b4j_raiseEvent("updateVal",{sw1:!b1});			
+        });
+		graphic.element('image510').on('click', function(element, event) {
+            console.log('event: ' + event.type + ', element: ' + element.id);			
+			b1 = graphic.getValue('sw2');
+			graphic.setValue('sw2',!b1);
+			b4j_raiseEvent("updateVal",{sw2:!b1});
+        });
+		graphic.element('image524').on('click', function(element, event) {
+            console.log('event: ' + event.type + ', element: ' + element.id);			
+			b1 = graphic.getValue('sw3');
+			graphic.setValue('sw3',!b1);
+			b4j_raiseEvent("updateVal",{sw3:!b1});
+        });
+		graphic.element('image552').on('click', function(element, event) {
+            console.log('event: ' + event.type + ', element: ' + element.id);			
+			b1 = graphic.getValue('sw4');
+			graphic.setValue('sw4',!b1);
+			b4j_raiseEvent("updateVal",{sw4:!b1});
+        });
+		graphic.element('image566').on('click', function(element, event) {
+            console.log('event: ' + event.type + ', element: ' + element.id);			
+			b1 = graphic.getValue('sw5');
+			graphic.setValue('sw5',!b1);
+			b4j_raiseEvent("updateVal",{sw5:!b1});
+        });
+		graphic.element('image538').on('click', function(element, event) {
+            console.log('event: ' + event.type + ', element: ' + element.id);			
+			b1 = graphic.getValue('sw6');
+			graphic.setValue('sw6',!b1);
+			b4j_raiseEvent("updateVal",{sw6:!b1});
+        });
+		graphic.element('image580').on('click', function(element, event) {
+            console.log('event: ' + event.type + ', element: ' + element.id);			
+			b1 = graphic.getValue('sw7');
+			graphic.setValue('sw7',!b1);
+			b4j_raiseEvent("updateVal",{sw7:!b1});
+        });
+
+    });
+	
+    // Files could not be loaded, maybe due to security restrictions
+    // Display error message
+    graphic.on('error', function() {
+        document.getElementById('error').style['display'] = 'block';
+    })
+	
+	$( document ).ready(function() {	
+		b4j_connect("/ws");
+		
+		setInterval(function(){ 			
+			
+		}, 1000);
+		
+		
+		
+	});
+	
+	function updateVal(data) {
+		Object.entries(data).forEach(([key, value]) => {
+			console.log(key, value);
+			graphic.setValue(key,value);
+		});		
+		
+	}
+</script>
+
+</body>
+</html>

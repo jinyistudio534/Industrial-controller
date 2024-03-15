@@ -1,0 +1,158 @@
+{
+	"tags": [
+		{
+			"tag": "led0",	
+			"usage":"控制指示燈0的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "led1",	
+			"usage":"指示燈1的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "led2",	
+			"usage":"指示燈2的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "led3",	
+			"usage":"指示燈3的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "led4",	
+			"usage":"指示燈4的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "led5",	
+			"usage":"指示燈5的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "led6",	
+			"usage":"指示燈6的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "led7",	
+			"usage":"指示燈7的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "sw0",	
+			"usage":"開關0的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "sw1",	
+			"usage":"開關1的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "sw2",	
+			"usage":"開關2的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "sw3",	
+			"usage":"開關3的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "sw4",	
+			"usage":"開關4的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "sw5",	
+			"usage":"開關5的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "sw6",	
+			"usage":"開關6的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		},
+		{
+			"tag": "sw7",	
+			"usage":"開關7的ON,OFF",
+			"type": "boolean",
+			"default":"false"
+		}
+	],
+	"events":[
+		{
+			"name": "sw0",	
+			"usage":"開關0的ON,OFF切換",
+			"type": "boolean",
+			"action":"value"
+		},
+		{
+			"name": "sw1",	
+			"usage":"開關1的ON,OFF切換",
+			"type": "boolean",
+			"action":"value"
+		},
+		{
+			"name": "sw2",	
+			"usage":"開關2的ON,OFF切換",
+			"type": "boolean",
+			"action":"value"
+		},
+		{
+			"name": "sw3",	
+			"usage":"開關3的ON,OFF切換",
+			"type": "boolean",
+			"action":"value"
+		},
+		{
+			"name": "sw4",	
+			"usage":"開關4的ON,OFF切換",
+			"type": "boolean",
+			"action":"value"
+		},
+		{
+			"name": "sw5",	
+			"usage":"開關5的ON,OFF切換",
+			"type": "boolean",
+			"action":"value"
+		},
+		{
+			"name": "sw6",	
+			"usage":"開關6的ON,OFF切換",
+			"type": "boolean",
+			"action":"value"
+		},
+		{
+			"name": "sw7",	
+			"usage":"開關7的ON,OFF切換",
+			"type": "boolean",
+			"action":"value"
+		}
+	],
+	"propertys":[
+		
+	],
+	"title": "INPUT,OUTPUT",
+	"description":"INPUT,OUTPUT測試面板",
+	"js":"",
+	"css":"",
+	"dashboard":"io"
+}
